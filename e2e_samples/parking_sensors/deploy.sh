@@ -32,7 +32,7 @@ set -o nounset
 for env_name in dev stg prod; do  # dev stg prod
     export ENV_NAME=$env_name
     export RESOURCE_GROUP_NAME="$RESOURCE_GROUP_NAME_PREFIX-$env_name-rg"
-    export GITHUB_REPO_URL="https://github.com/$GITHUB_REPO"
+    export GITHUB_REPO_URL="https://github.com/duhuynh/DataOps"
     ./scripts/deploy_infrastructure.sh  # inclues AzDevOps Azure Service Connections and Variable Groups
 done
 
@@ -47,7 +47,7 @@ done
 export DEV_$(egrep '^DATAFACTORY_NAME' .env.dev | tail -1 | xargs)
 
 # Replace 'devlace/mdw-dataops-clone' to deployer's github project
-sed -i "s+devlace/mdw-dataops-clone+$GITHUB_REPO+" devops/azure-pipelines-cd-release.yml
+sed -i "s+devlace/mdw-dataops-clone+duhuynh/DataOps+" devops/azure-pipelines-cd-release.yml
 
 # Deploy pipelines
 ./scripts/deploy_azdo_pipelines.sh

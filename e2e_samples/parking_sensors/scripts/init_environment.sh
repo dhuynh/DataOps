@@ -1,18 +1,6 @@
 #!/bin/bash
 
-# check required variables are specified.
-
-if [ -z $GITHUB_REPO ]
-then 
-    echo "Please specify a github repo using the GITHUB_REPO environment variable in this form '<my_github_handle>/<repo>'. (ei. 'devlace/mdw-dataops-import')"
-    exit 1
-fi
-
-if [ -z $GITHUB_PAT_TOKEN ]
-then 
-    echo "Please specify a github PAT token using the GITHUB_PAT_TOKEN environment variable."
-    exit 1
-fi
+# check required variables are specifi:
 
 # initialise optional variables.
 
