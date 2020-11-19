@@ -32,7 +32,7 @@ set -o nounset
 for env_name in dev stg prod; do  # dev stg prod
     export ENV_NAME=$env_name
     export RESOURCE_GROUP_NAME="$RESOURCE_GROUP_NAME_PREFIX-$env_name-rg"
-    export GITHUB_REPO_URL="https://github.com/duhuynh/DataOps"
+    export GITHUB_REPO_URL="https://github.com/dhuynh/DataOps"
     ./scripts/deploy_infrastructure.sh  # inclues AzDevOps Azure Service Connections and Variable Groups
 done
 
